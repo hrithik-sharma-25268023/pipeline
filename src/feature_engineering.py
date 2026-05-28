@@ -1,5 +1,6 @@
 """feature engineering module for data"""
 
+import os
 import pandas as pd
 
 
@@ -28,3 +29,11 @@ def create_age_category(data: pd.DataFrame) -> pd.DataFrame:
 
     data['age-group'] = data['age'].apply(age_category)
     return data
+
+if __name__ == "__main__":
+    
+    data_path = os.getcwd()+"/data/income.csv"
+    data = pd.read_csv(data_path)
+    data = create_job_type(data)
+    data = create_age_category(data)
+    data.to_csv(data_path)
