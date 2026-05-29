@@ -36,4 +36,4 @@ if __name__ == "__main__":
     data = pd.read_csv(data_path)
     data = create_job_type(data)
     data = create_age_category(data)
-    data.to_csv(data_path)
+    data.to_csv(data_path, index=False)
