@@ -35,5 +35,5 @@ if __name__ == "__main__":
     data_path = os.getcwd()+"/data/income.csv"
     data = pd.read_csv(data_path)
     data = create_job_type(data)
-    data = create_age_category(data)
+    data = create_age_category(data).drop(data.columns[0], axis=1)
     data.to_csv(data_path, index=False)
